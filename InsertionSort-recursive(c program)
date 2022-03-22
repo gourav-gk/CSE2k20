@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+void insertionSortRecursive(int arr[], int n)
+{
+	// Base case
+	if (n <= 1)
+		return;
+
+	// Sort first n-1 elements
+	insertionSortRecursive( arr, n-1 );
+
+	// Insert last element at its correct position
+	// in sorted array.
+	int last = arr[n-1];
+	int j = n-2;
+
+	// place the selected element at correct place
+	while (j >= 0 && arr[j] > last)
+	{
+		arr[j+1] = arr[j];
+		j--;
+	}
+	arr[j+1] = last;
+	
+}
+
+void main() {
+    int n,A[10],key=0,j;
+    printf("Enter number of element(<10)");
+    scanf("%d",&n);
+    
+    // Enter Elements
+    
+    printf("Enter the elements");
+    for(int i=0;i<n;i++)
+    {
+       scanf("%d",&A[i]); 
+    }
+    
+    // call insertion sort function
+    insertionSortRecursive(A, n);
+    
+    // print elements
+    
+    for(int i=0;i<n;i++)
+     printf("%d",A[i]);
+}
