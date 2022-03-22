@@ -25,7 +25,7 @@ void insertionSortRecursive(int arr[], int n)
 }
 
 void main() {
-    int n,A[10],key=0,j;
+    int n,A[10];
     printf("Enter number of element(<10)");
     scanf("%d",&n);
     
